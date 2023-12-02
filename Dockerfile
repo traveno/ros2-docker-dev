@@ -16,7 +16,13 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-desktop \
+    ros-noetic-stage-ros \
+    ros-noetic-slam-gmapping \
     && rm -rf /var/lib/apt/lists/*
+
+RUN touch /root/.bashrc \
+    && echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc \
+    && echo "cd /ros2_ws" >> /root/.bashrc
 
 # Set the entrypoint to source ROS setup.bash and run a bash shell
 CMD ["/bin/bash"]

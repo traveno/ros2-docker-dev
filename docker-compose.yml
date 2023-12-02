@@ -14,7 +14,7 @@ services:
     image: ${ROS_DEV_CONTAINER_NAME} ## For now, the names are the same. Can change if ever a need arises.
     build: ./
     volumes: 
-      - ${ROS_PROJECT_PATH}:/ros2_ws/src/
+      - ${ROS_PROJECT_PATH}:/ros2_ws
     environment:
       - DISPLAY=novnc:0.0
     networks:
@@ -24,8 +24,8 @@ services:
   novnc:
     image: theasp/novnc:latest
     environment:
-      - DISPLAY_WIDTH=2560
-      - DISPLAY_HEIGHT=1440
+      - DISPLAY_WIDTH=2048
+      - DISPLAY_HEIGHT=1200
     ports:
       - "8080:8080"
     networks:
