@@ -53,7 +53,7 @@ When working inside the container, use
 cmux <package-name>
 ```
 
-to run the package's `src/launch/catmux.yaml` launch file. Or launch traditionally using `roslaunch`.
+To run the package's `src/launch/catmux.yaml` launch file. Or launch traditionally using `roslaunch`.
 
 * `C-a` `x` will kill the tmux server and stop all running ROS nodes.
 * Alternatively, type `cmux-kill` to kill a background catmux session.
