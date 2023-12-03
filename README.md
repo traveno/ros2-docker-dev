@@ -2,11 +2,11 @@
 
 Forked from Adeeb Abbas's project [ros2-docker-dev](https://github.com/adeeb10abbas/ros2-docker-dev).
 
-This is a ROS Noetic environment streamlined for ROB456 development, and ROS development in general.
+This is a ROS Noetic environment streamlined for ROB456 development, and small-scope ROS development in general.
 
 ## Installation
 Add the following to your `~/.bashrc` or `~/.zshrc`, or run the provided `setup.sh` (only for `bash` users). 
-Note - change `$SCRIPT-DIR` to the path of the cloned repo. The `setup.sh` would do this automatically for `bash` users. 
+Note: change `$SCRIPT-DIR` to the path of the cloned repo. The `setup.sh` does this automatically.
 ```
 ros_dev() {
   # Check if the correct number of arguments were provided
@@ -35,7 +35,7 @@ ros_dev my_ros_container /path/to/my/ros/project
 
 The above command will build the container and mount the project directory to 
 the container's `/ros2_ws` directory. The container will be named my_ros_container 
-and will be run in the background. To access the container via bash shell: 
+and will be run in the background. To access the container use
 
 ```
 docker exec -it my_ros_container /bin/bash
@@ -67,7 +67,7 @@ http://localhost:8080/vnc.html
 
 This should work for any machine.  
 
-However, if you have an NVIDIA GPU, consider using rocker.
+However, if you have an NVIDIA GPU, consider using rocker...
 
 ```
 rocker --nvidia --x11 -- my_ros_container
