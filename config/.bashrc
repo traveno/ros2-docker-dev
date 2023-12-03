@@ -17,13 +17,13 @@ cmux ()
   # Check if the correct number of arguments were provided
   if (( $# != 1 )); then
     echo "Usage: cmux <ros_package>"
-    echo "Will look for <ros_package>/config/catmux.yaml"
+    echo "Will look for <ros_package>/launch/catmux.yaml"
     return 1
   fi
 
   # Check if the package config exists
-  if test -f $(rospack find $1)/config/catmux.yaml; then
-    catmux_create_session $(rospack find $1)/config/catmux.yaml
+  if test -f $(rospack find $1)/launch/catmux.yaml; then
+    catmux_create_session $(rospack find $1)/launch/catmux.yaml
   fi
 }
 

@@ -20,13 +20,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-desktop \
     ros-noetic-stage-ros \
     ros-noetic-slam-gmapping \
+    ros-noetic-map-server \
     && rm -rf /var/lib/apt/lists/*
 
 # Install catmux
 RUN pip3 install --user catmux
-
-# Tmux theme
-RUN git clone https://github.com/pineapplegiant/spaceduck-terminal /root/.tmux-spaceduck
 
 # Set the entrypoint to source ROS setup.bash and run a bash shell
 COPY docker-entry.sh /docker-entry.sh
