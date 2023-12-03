@@ -1,0 +1,10 @@
+XTerm*background: black
+XTerm*foreground: white
+XTerm*internalBorder: 10
+XTerm*loginShell: true
+XTerm*scrollBar: false
+XTerm*scrollKey: true
+XTerm*saveLines: 1000
+XTerm*multiClickTime: 250
+# xterm*faceName: Liberation Mono
+# xterm*faceSize: 18

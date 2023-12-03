@@ -25,4 +25,6 @@ ENV HOME=/root \
     DISPLAY_HEIGHT=800
 
 COPY entrypoint.sh /entrypoint.sh
+COPY supervisord.conf /supervisord.conf 
+
 ENTRYPOINT ["/entrypoint.sh"]
