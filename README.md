@@ -57,7 +57,7 @@ to run the package's `src/launch/catmux.yaml` launch file. Or launch traditional
 * Alternatively, type `cmux-kill` to kill a background catmux session.
 * Refer to `config/.tmux.conf` for more keybindings.
 
-Consider using VSCode and the Remote Containers extension. [Open VSCode and click on `Attach to a Running Container`](https://code.visualstudio.com/docs/devcontainers/attach-container). Any terminals launched in VSCode will be ready to go.
+Consider using VSCode and the Remote Containers extension. Open VSCode and click on [`Attach to a Running Container`](https://code.visualstudio.com/docs/devcontainers/attach-container). Any terminals launched in VSCode will be ready to go.
 
 To access desktop visualizations like RViz, access the local VNC server at
 
