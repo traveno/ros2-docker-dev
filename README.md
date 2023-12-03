@@ -27,24 +27,30 @@ ros_dev() {
 }
 ```
 ## Usage
-To run a single container with your ROS project, use the following:
+To run a container with your ROS project, use
 
 ```
 ros_dev my_ros_container /path/to/my/ros/project
 ```
 
 The above command will build the container and mount the project directory to 
-the container's `/ros2_ws directory`. The container will be named my_ros_container 
-and will be run in the background. To access the container, use the following: 
-`docker exec -it my_ros_container /bin/bash`.
+the container's `/ros2_ws` directory. The container will be named my_ros_container 
+and will be run in the background. To access the container via bash shell: 
+
+```
+docker exec -it my_ros_container /bin/bash
+```
 
 The container's `.bashrc` (located in the config folder of this repo) will source the correct files,
 and warn the user if the project hasn't been built yet.
 
-Catmux has been added to the environment, and bash commands are available to you. Use
+Catmux has been added to the environment, and bash commands are available to you.
+When working inside the container, use
+
 ```
 cmux <package-name>
 ```
+
 to run the package's `src/launch/catmux.yaml` launch file. Or launch traditionally using `roslaunch`.
 
 * `C-a` `x` will kill the tmux server and stop all running ROS nodes.
