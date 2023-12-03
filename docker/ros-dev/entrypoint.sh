@@ -3,7 +3,7 @@
 
 set -eu
 
-# Append our .bashrc to Docker's .bashrc
+# Append .bashrc to Docker's .bashrc
 touch /root/.bashrc
 echo "source /root/.bashrc-external" >> /root/.bashrc
 

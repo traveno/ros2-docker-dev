@@ -1,1 +1,2 @@
-/root/.fehbg &
+#!/bin/bash
+alias nv="nvim"

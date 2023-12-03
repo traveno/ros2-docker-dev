@@ -10,6 +10,7 @@ RUN set -ex; \
       net-tools \
       novnc \
       supervisor \
+      neovim \
       tigervnc-standalone-server \
       xterm
 
@@ -21,9 +22,7 @@ ENV HOME=/root \
     LC_ALL=C.UTF-8 \
     DISPLAY=:0.0 \
     DISPLAY_WIDTH=1280 \
-    DISPLAY_HEIGHT=800 \
-    RUN_XTERM=yes \
-    RUN_FLUXBOX=yes
+    DISPLAY_HEIGHT=800
 
-COPY . /app
-ENTRYPOINT ["/app/entrypoint.sh"]
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

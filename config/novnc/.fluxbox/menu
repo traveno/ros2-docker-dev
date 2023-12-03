@@ -1,5 +1,5 @@
 [begin] (fluxbox)
-[exec] (xterm) {/usr/bin/xterm}
+[exec] (xterm) {/usr/bin/xterm -font terminus-pt154-16}
 [nop] (--------)
 [include] (/etc/X11/fluxbox/fluxbox-menu)
 [end]
