@@ -5,8 +5,9 @@ Forked from Adeeb Abbas's project [ros2-docker-dev](https://github.com/adeeb10ab
 This is a ROS Noetic environment streamlined for ROB456 development, and small-scope ROS development in general.
 
 ## Installation
-Add the following to your `~/.bashrc` or `~/.zshrc`, or run the provided `setup.sh` (only for `bash` users). 
-Note: change `$SCRIPT-DIR` to the path of the cloned repo. The `setup.sh` does this automatically.
+Add the following to your `~/.bashrc` or `~/.zshrc`, or run the provided setup script (only for bash users). 
+Note: change `$SCRIPT-DIR` to the path of the cloned repo. The setup script does this automatically.
+
 ```
 ros_dev() {
   # Check if the correct number of arguments were provided
@@ -26,6 +27,7 @@ ros_dev() {
   done
 }
 ```
+
 ## Usage
 To run a container with your ROS project, use
 
