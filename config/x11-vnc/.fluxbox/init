@@ -64,7 +64,7 @@ session.ignoreBorder:	false
 session.configVersion:	13
 session.appsFile:	/root/.fluxbox/apps
 session.cacheLife:	5
-session.styleFile:	/root/.fluxbox/styles/WindowLab
+session.styleFile:	/root/.fluxbox/styles
 session.doubleClickInterval:	250
 session.autoRaiseDelay:	250
 session.keyFile:	~/.fluxbox/keys

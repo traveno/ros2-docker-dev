@@ -23,7 +23,8 @@ if [ $? -eq 0 ]; then
     fbautostart
 fi
 
-feh --no-fehbg --bg-fill "/root/.fluxbox/bg.jpg"
+# feh --no-fehbg --bg-fill "/root/.fluxbox/bg.jpg"
+feh --no-fehbg --bg-fill "/root/.fluxbox/bg.png"
 xterm -font terminus-pt154-16 &
 
 # And last but not least we start fluxbox.

@@ -28,13 +28,13 @@ services:
   vncserver:
     build:
       context: ./docker/x11-vnc
+      args:
+        THEME: WindowLab
     volumes:
       - ./config/x11-vnc/.fluxbox:/root/.fluxbox
+      - ./config/x11-vnc/themes:/root/.fluxbox-themes
       - ./config/x11-vnc/.bashrc:/root/.bashrc
       - ./config/x11-vnc/.Xdefaults:/root/.Xdefaults
-    environment:
-      - RUN_XTERM=yes
-      - RUN_FLUXBOX=true
     ports:
       - "5900:5900"
       - "8080:8080"
