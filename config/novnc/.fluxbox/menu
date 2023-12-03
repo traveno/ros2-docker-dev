@@ -1,0 +1,5 @@
+[begin] (fluxbox)
+[exec] (xterm) {/usr/bin/xterm}
+[nop] (--------)
+[include] (/etc/X11/fluxbox/fluxbox-menu)
+[end]

@@ -27,5 +27,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip3 install --user catmux
 
 # Set the entrypoint to source ROS setup.bash and run a bash shell
-COPY docker-entry.sh /docker-entry.sh
-ENTRYPOINT ["/docker-entry.sh", "/bin/bash"]
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh", "/bin/bash"]

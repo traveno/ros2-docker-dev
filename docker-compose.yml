@@ -12,11 +12,12 @@ services:
   ros_dev_env:
     container_name: ${ROS_DEV_CONTAINER_NAME}
     image: ${ROS_DEV_CONTAINER_NAME} ## For now, the names are the same. Can change if ever a need arises.
-    build: ./
+    build:
+      context: ./docker/ros-dev
     volumes: 
       - ${ROS_PROJECT_PATH}:/ros2_ws
-      - ./config/.bashrc:/root/.bashrc-external
-      - ./config/.tmux.conf:/root/.tmux.conf
+      - ./config/ros-dev/.bashrc:/root/.bashrc-external
+      - ./config/ros-dev/.tmux.conf:/root/.tmux.conf
     environment:
       - DISPLAY=novnc:0.0
     networks:
@@ -24,14 +25,21 @@ services:
     stdin_open: true
     tty: true
   novnc:
-    image: theasp/novnc:latest
+    build:
+      context: ./docker/novnc
+    volumes:
+      - ./config/novnc/.fluxbox:/root/.fluxbox
+      - ./config/novnc/.fehbg:/root/.fehbg
+      - ./config/novnc/.bashrc:/root/.bashrc
+      - ./config/novnc/.Xdefaults:/root/.Xdefaults
     environment:
-      - DISPLAY_WIDTH=2048
-      - DISPLAY_HEIGHT=1200
+      - RUN_XTERM=yes
+      - RUN_FLUXBOX=true
     ports:
+      - "5900:5900"
       - "8080:8080"
     networks:
       - x11
     restart: on-failure
 networks:
-  x11: 
+  x11:
