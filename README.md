@@ -57,12 +57,18 @@ to run the package's `src/launch/catmux.yaml` launch file. Or launch traditional
 * Alternatively, type `cmux-kill` to kill a background catmux session.
 * Refer to `config/.tmux.conf` for more keybindings.
 
-To make it a super convenient development environment, after running the container. [Just open up VSCode and click on `Attach to a Running Container`](https://code.visualstudio.com/docs/devcontainers/attach-container)
+Consider using VSCode and the Remote Containers extension. [Open VSCode and click on `Attach to a Running Container`](https://code.visualstudio.com/docs/devcontainers/attach-container). Any terminals launched in VSCode will be ready to go.
 
-To access any desktop visualizations like RViz, go to your local vnc server: 
-http://localhost:8080/vnc.html. This should work for essentially all kinds of machines. 
-It's much easier to get this working, so I recommend using this method if you're just trying to get something going. 
+To access desktop visualizations like RViz, access the local VNC server at
 
-However, if you have an Nvidia GPU and you have figured out how to install the 
-nvidia-docker2 jazz. You can use rocker. You can also use Intel Integrated Graphics  with rocker, however, I haven't tested it. rocker is a tool that allows you to run  docker containers with hardware acceleration. To use rocker, with our containers run the following:
-`rocker --nvidia --x11 -- my_ros_container`
+```
+http://localhost:8080/vnc.html
+```
+
+This should work for any machine.  
+
+However, if you have an NVIDIA GPU, consider using rocker.
+
+```
+rocker --nvidia --x11 -- my_ros_container
+```
