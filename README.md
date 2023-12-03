@@ -46,20 +46,21 @@ docker exec -it my_ros_container /bin/bash
 The container's `.bashrc` (located in the config folder of this repo) will source the correct files,
 and warn the user if the project hasn't been built yet.
 
-Catmux has been added to the environment, and bash commands are available to you.
-When working inside the container, use
+[Catmux](https://github.com/fmauch/catmux) has been added to the environment, and relevant bash commands are available to you.
+When working inside the container, use the following to run the package's `src/launch/catmux.yaml` launch file.
 
 ```
 cmux <package-name>
 ```
 
-To run the package's `src/launch/catmux.yaml` launch file. Or launch traditionally using `roslaunch`.
+ Or launch traditionally using `roslaunch`.
 
 * `C-a` `x` will kill the tmux server and stop all running ROS nodes.
 * Alternatively, type `cmux-kill` to kill a background catmux session.
 * Refer to `config/.tmux.conf` for more keybindings.
 
-Consider using VSCode and the Remote Containers extension. Open VSCode and click on [`Attach to a Running Container`](https://code.visualstudio.com/docs/devcontainers/attach-container). Any terminals launched in VSCode will be ready to go.
+Consider using VSCode and the Remote Containers extension. Open VSCode and click on [`Attach to a Running Container`](https://code.visualstudio.com/docs/devcontainers/attach-container).
+Any terminals launched in VSCode will be ready to go.
 
 To access desktop visualizations like RViz, access the local VNC server at
 
