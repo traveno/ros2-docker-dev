@@ -1,10 +1,11 @@
 #!/bin/bash
-# docker-entry.sh
-
 set -eu
 
-# Append .bashrc to Docker's .bashrc
+# Append our .bashrc to Docker's .bashrc
 touch /root/.bashrc
-echo "source /root/.bashrc-external" >> /root/.bashrc
+echo "source /config/.bashrc" >> /root/.bashrc
+
+# Bring in the tmux config
+cp /config/.tmux.conf /root/.tmux.conf
 
 exec "$@"

@@ -26,6 +26,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install catmux
 RUN pip3 install --user catmux
 
+# Copy in config
+COPY config /config
+
 # Set the entrypoint to source ROS setup.bash and run a bash shell
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh", "/bin/bash"]

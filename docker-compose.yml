@@ -1,40 +1,22 @@
-# docker-compose.yml
-# 
-# NOTE - Only necessary for machines without an Nvidia GPU
-# This Docker Compose configuration sets up a Drake ROS integration environment
-# along with a vncserver server for remote access to the graphical interface of any
-# visualization tools used in the project.
-#
-# Author: Adeeb Abbas
-
-name: ros_ws
+name: ros_in_a_box
 version: '3.8'
 services:
-  ros_dev_env:
-    container_name: ${ROS_DEV_CONTAINER_NAME}
-    image: ${ROS_DEV_CONTAINER_NAME} ## For now, the names are the same. Can change if ever a need arises.
+  ros_noetic_ws:
+    image: traveno/ros-noetic-workspace:0.0.2
     build:
       context: ./docker/ros-dev
-    volumes: 
-      - ${ROS_PROJECT_PATH}:/ros2_ws
-      - ./config/ros-dev/.bashrc:/root/.bashrc-external
-      - ./config/ros-dev/.tmux.conf:/root/.tmux.conf
+    # volumes: 
+      # - ${ROS_PROJECT_PATH}:/ros2_ws
     environment:
       - DISPLAY=vncserver:0.0
     networks:
       - x11
     stdin_open: true
     tty: true
-  vncserver:
+  vnc_server:
+    image: traveno/ros-noetic-window-server:0.0.2
     build:
       context: ./docker/x11-vnc
-      args:
-        THEME: WindowLab
-    volumes:
-      - ./config/x11-vnc/.fluxbox:/root/.fluxbox
-      - ./config/x11-vnc/themes:/root/.fluxbox-themes
-      - ./config/x11-vnc/.bashrc:/root/.bashrc
-      - ./config/x11-vnc/.Xdefaults:/root/.Xdefaults
     ports:
       - "5900:5900"
       - "8080:8080"
@@ -42,6 +24,6 @@ services:
       - x11
     restart: on-failure
     environment:
-      THEME: "Win98"
+      THEME: "WindowLab"
 networks:
   x11:

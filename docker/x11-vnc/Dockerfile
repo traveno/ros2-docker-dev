@@ -27,4 +27,7 @@ ENV HOME=/root \
 COPY entrypoint.sh /entrypoint.sh
 COPY supervisord.conf /supervisord.conf
 
+# Copy in config files
+COPY config /config
+
 ENTRYPOINT ["/entrypoint.sh"]
