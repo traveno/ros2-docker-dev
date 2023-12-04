@@ -41,5 +41,7 @@ services:
     networks:
       - x11
     restart: on-failure
+    environment:
+      THEME: "Win98"
 networks:
   x11:

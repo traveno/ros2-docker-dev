@@ -22,13 +22,9 @@ ENV HOME=/root \
     LC_ALL=C.UTF-8 \
     DISPLAY=:0.0 \
     DISPLAY_WIDTH=1280 \
-    DISPLAY_HEIGHT=800 \
-    THEME=${THEME}
+    DISPLAY_HEIGHT=800
 
 COPY entrypoint.sh /entrypoint.sh
 COPY supervisord.conf /supervisord.conf
-
-# Pass on our THEME arg
-ARG THEME=WindowLab
 
 ENTRYPOINT ["/entrypoint.sh"]
