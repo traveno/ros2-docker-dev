@@ -1,7 +1,6 @@
 name: rosbox 
 services:
   dev_environment:
-    container_name: dev_environment
     image: traveno/ros-noetic-workspace:0.0.4
     build:
       context: ./docker/ros-dev
@@ -12,8 +11,7 @@ services:
     stdin_open: true
     tty: true
   vnc_server:
-    container_name: vnc_server
-    image: traveno/ros-noetic-window-server:0.0.4
+    image: traveno/ros-noetic-window-server:0.0.5
     build:
       context: ./docker/x11-vnc
     ports:

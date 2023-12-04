@@ -6,7 +6,7 @@ session.screen0.iconbar.usePixmap:	true
 session.screen0.iconbar.iconTextPadding:	10
 session.screen0.toolbar.tools:	prevworkspace, workspacename, nextworkspace, clock, prevwindow, nextwindow, iconbar, systemtray
 session.screen0.toolbar.onhead:	1
-session.screen0.toolbar.placement:	BottomCenter
+session.screen0.toolbar.placement:	TopCenter
 session.screen0.toolbar.visible:	true
 session.screen0.toolbar.autoHide:	false
 session.screen0.toolbar.maxOver:	false

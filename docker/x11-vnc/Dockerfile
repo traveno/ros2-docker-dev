@@ -30,4 +30,7 @@ COPY supervisord.conf /supervisord.conf
 # Copy in config files
 COPY config /config
 
+# Add a first time use flag
+RUN touch /root/.first_login
+
 ENTRYPOINT ["/entrypoint.sh"]
