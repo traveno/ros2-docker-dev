@@ -29,6 +29,12 @@ RUN pip3 install --user catmux
 # Copy in config
 COPY config /config
 
-# Set the entrypoint to source ROS setup.bash and run a bash shell
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh", "/bin/bash"]
+# Append our .bashrc script and chmod it just in case
+RUN cat /config/.bashrc >> /root/.bashrc \
+    && chmod +x /root/.bashrc
+
+# Bring in the tmux config
+RUN cp /config/.tmux.conf /root/.tmux.conf
+
+# We're done, run CMD and just "spin" ... ifykyk
+CMD ["/bin/bash"]
