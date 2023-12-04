@@ -2,19 +2,19 @@ name: ros_in_a_box
 version: '3.8'
 services:
   ros_noetic_ws:
-    image: traveno/ros-noetic-workspace:0.0.2
+    image: traveno/ros-noetic-workspace:0.0.3
     build:
       context: ./docker/ros-dev
     # volumes: 
       # - ${ROS_PROJECT_PATH}:/ros2_ws
     environment:
-      - DISPLAY=vncserver:0.0
+      - DISPLAY=vnc_server:0.0
     networks:
       - x11
     stdin_open: true
     tty: true
   vnc_server:
-    image: traveno/ros-noetic-window-server:0.0.2
+    image: traveno/ros-noetic-window-server:0.0.3
     build:
       context: ./docker/x11-vnc
     ports:
